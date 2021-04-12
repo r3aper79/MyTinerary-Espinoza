@@ -1,5 +1,5 @@
 import {NavLink} from 'react-router-dom'
-import {Navbar , Nav, DropdownButton,Form, Dropdown} from 'react-bootstrap'
+import {Navbar , Nav, DropdownButton,Form} from 'react-bootstrap'
 const logo = require('../img/login1.png')
 const Header = ()=>{
     return(
@@ -9,11 +9,11 @@ const Header = ()=>{
          <Navbar.Toggle aria-controls="basic-navbar-nav" />
          <Navbar.Collapse id="basic-navbar-nav">
          <Nav className="mr-auto">
-        <Nav.Link><NavLink to="/"><h4 className="h4-link">Home</h4></NavLink></Nav.Link>
-         <Nav.Link><NavLink to="/cities"><h4 className="h4-link">Cities</h4></NavLink></Nav.Link>
-             <DropdownButton variant="warning" id="dropdown-basic-button" title="User Options" style={{paddingTop:'1.5vh' , paddingLeft:'0.5vw'}}>
-                <Dropdown.Item><NavLink to="/sign-up"><h4 className="h3-dropmenu">Sign Up</h4></NavLink></Dropdown.Item>
-                <Dropdown.Item><NavLink to="/log-in"><h4 className="h3-dropmenu">Log in</h4></NavLink></Dropdown.Item>
+        <NavLink to="/"><h4 className="h4-link">Home</h4></NavLink>
+         <NavLink to="/cities"><h4 className="h4-link">Cities</h4></NavLink>
+             <DropdownButton variant="warning" id="dropdown-basic-button" title="User Options" style={{paddingTop:'0.2vh' , paddingLeft:'0.5vw'}}>
+                <NavLink to="/sign-up"><h4 className="h3-dropmenu">Sign Up</h4></NavLink>
+                <NavLink to="/log-in"><h4 className="h3-dropmenu">Log in</h4></NavLink>
             </DropdownButton>
         </Nav>
     <Form inline>
