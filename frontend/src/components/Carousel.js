@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Row , Col} from 'react-bootstrap'
 import {
   Carousel,
   CarouselItem,
@@ -14,10 +15,10 @@ const items = [
     {src: 'Bergen-Noruega.jpg', titulo: 'Bergen', id: '1'},
     {src: 'Budapest.jpg', titulo: 'Budapest', id: '2'},
     {src: 'buenos-aires.jpg', titulo: 'Buenos Aires', id: '3'},
-    {src: 'ciudad-del-cabo.jpg', titulo: 'Ciudad del Cabo', id: '4'}
+    {src: 'ciudad-del-cabo.jpg', titulo: 'Cape Town', id: '4'}
   ],
   [
-    {src: 'Edimburgo.jpg', titulo: 'Edimburgo', id: '5'},
+    {src: 'Edimburgo.jpg', titulo: 'Edimburgh', id: '5'},
     {src: 'janeiro.jpg', titulo: 'Rio de Janeiro', id: '6'},
     {src: 'Kyoto.jpg', titulo: 'Kyoto', id: '7'},
     {src: 'Luang.jpg', titulo: 'Luang', id: '8'}
@@ -57,7 +58,9 @@ const Example = (props) => {
         onExited={() => setAnimating(false)}
         key={new_key}
       >
+
         <ContentSlice item={item} />
+
         
       </CarouselItem>
     );

@@ -1,3 +1,4 @@
+
 import Carousel from '../components/Carousel'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
@@ -9,7 +10,10 @@ const Home = ()=>{
         <>
         <Header/>
         <Hero/>
+        <div>
         <CarouselTitle/>
+        </div>
+        
         <Carousel/>
         <Footer/>
         </>

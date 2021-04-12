@@ -1,6 +1,10 @@
+import Header from '../components/Header'
 const Cities = ()=>{
     return (
-        <h1>Hola</h1>
+        <>
+        <Header/>
+        <h1 style={{color: 'black' , backgroundColor:'white', height:'100vh'}}>Page under construction</h1>
+        </>
     )
 
 }
