@@ -4,7 +4,7 @@ const Title = ()=>{
         <>
         <Row style={{marginTop:'1vh',padding:'0'}}>
             <Col>
-            <h2 style={{color: 'white',backgroundColor: '#514646',
+            <h2 style={{color: 'white',backgroundColor: 'black',
                 paddingTop: '1vh',
                 margin: '2vh 0',
                 textAlign: 'center'

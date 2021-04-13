@@ -1,30 +1,38 @@
-body{
-    padding: 0 !important;
-    margin: 0 !important;
+*{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
 }
+
 .img-carousel{
     transition:all .1s ease !important;
     display: flex;
+    width: 25vw;
+    height: 35vh;
     border-radius: 25px;
     justify-content: center;
     align-items: center;
-    margin: 1vh auto;
+    margin: 1vh 2vw 3vh 0;
 }
 .img-carousel:hover{
     transform: scale(1.05);
     box-shadow: 2px 2px 6px 1px white;
 }
 .contenedor-gral{
-    background-color: #514646;
+    background-color: black;
+    width: 99vw;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 .carousel{
     display: flex;
-    background-color: #514646;
+    background-color: black;
     justify-content: center;
     align-items: center;
     margin: 1vh auto;
     flex-wrap: wrap;
     width: 74%;
+    height: 80vh;
 }
 /*#514646*/
 .titlePhoto{
@@ -78,16 +86,49 @@ body{
 
 .h4-link:hover{
     text-decoration: underline;
+    color: blueviolet;
     cursor: pointer;
+}
+.active:hover{
+    text-decoration: none;
+    color: blueviolet;
+}
+a:hover{
+    text-decoration: none;
+    color: blueviolet;
+}
+.logo-hero{
+    background-size: 'cover' ; 
+    height: 48vh;
+    width: 65%;
+    background-position: 50% 50%;
+    margin: 0 auto; 
+    padding: 0;
+}
+.main-hero-container{
+
+    width:'100vw'; 
+    margin: '0' ;
+    padding: '0' ;
+    height:'100%';
+    background-size: 'cover';
 }
 .Hero-container{
     background-repeat: no-repeat;
-    width: 100vw;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.container-fluid{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.row{
+    margin: 0;
+    width: 100%;
 }
 .text-hero{
     display: flex;
@@ -102,23 +143,50 @@ body{
 footer{
     background-color: black;
     color: white;
+    border-top: solid 2px white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 16%;
     padding-left: 1vw;
     padding-right: 1vw;
 }
-
+.my-btn{
+    margin-top:1vh !important; 
+    margin-bottom:1vh !important;
+}
+.my-btn:hover{
+    color: white !important;
+    text-decoration: none !important;
+}
+.NavLink{
+    text-decoration: none;
+    color: black;
+}
+.NavLink:hover{
+    text-decoration: none;
+    color: black;
+}
 #Find{
     -webkit-text-stroke: 1.2px black;
+    font-size: 25px; 
+    color: white;
+    margin: 0.41vh 0vw;        
+    font-weight: 600;
+    background-color: cadetblue;
+    border-radius: 25px;
+    border: solid 2px black;
 }
 #titleMytinerary{
     -webkit-text-stroke: 2px black;
+    font-size:45px; 
+    font-weight: 'bold';
+    color:white;
 }
 
 #heroTitle{
     -webkit-text-stroke: 1.5px black;
+    color: white; 
+    font-weight: 600;
 }
 
 
@@ -148,11 +216,13 @@ footer{
     text-align: center;
 }
 .h3-dropmenu:hover{
-
     text-decoration: none;
 }
+.home-carousel{
+    background-color: black;
+}
 
-@media (max-width: 547px){
+@media (max-width: 1000px){
     .carousel{
         display: flex;
         flex-direction: column;
@@ -164,14 +234,21 @@ footer{
     .iframe{
         text-align: center;
     }
-}
-.active{
-    color: violet;
+    .logo-hero{
+        background-size: cover ;
+        min-width: 100%;
+        background-position: 50% 50%;
+        margin: 0 auto; 
+        padding: 0;
+    }
 }
 
 .hero-hover{
     background-color: rgba(250, 250, 250, .15);
-    backdrop-filter: blur(6px);   
+    backdrop-filter: blur(6px);
+    margin: 0.6vh 0;
+    border: double 5px lightblue;
+    border-radius: 70px;   
 }
 .hero-hover:hover{
     background-color: rgba(5, 4, 4, 0.20);

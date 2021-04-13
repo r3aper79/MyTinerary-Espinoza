@@ -59,7 +59,7 @@ const Example = (props) => {
         key={new_key}
       >
 
-        <ContentSlice item={item} />
+        <ContentSlice items={item} />
 
         
       </CarouselItem>

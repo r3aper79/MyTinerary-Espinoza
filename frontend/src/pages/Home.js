@@ -10,11 +10,11 @@ const Home = ()=>{
         <>
         <Header/>
         <Hero/>
-        <div>
-        <CarouselTitle/>
+        <div className="home-carousel">
+            <CarouselTitle/>
+            <Carousel/>
         </div>
         
-        <Carousel/>
         <Footer/>
         </>
     )
