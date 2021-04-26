@@ -5,7 +5,7 @@ const logo = require('../img/login1.png')
 const Header = ()=>{
     return(
         <>
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="dark" expand="md">
             <Navbar.Brand style={{color: 'white'}}>MyTinerary</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
