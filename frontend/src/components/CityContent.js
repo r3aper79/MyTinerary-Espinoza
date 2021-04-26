@@ -10,15 +10,13 @@ import axios from 'axios'
 const CityContent = (props) =>{
     const myID = props.match.params.id
     let [myCity,setmyCity] = useState([])
-   
+
     useEffect(()=>{
         axios.get(`http://localhost:3080/api/city/${myID}`)
         .then(response => setmyCity(response.data.response))
         .catch(error => console.log(error))
     },[])
-
-    console.log("soy citycontent",myCity)
-    //let bgImg = require(`../img/${myCity.src}`)
+    
     return(
         <>
             <div className="cityContent">
@@ -30,7 +28,7 @@ const CityContent = (props) =>{
                 </div>
             </div>
             <div>
-                <CityTinerary titulo={myCity.titulo}/>
+                <CityTinerary IdOfCity={myID}/>
             </div>
         </>
     )

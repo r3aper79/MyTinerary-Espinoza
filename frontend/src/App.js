@@ -6,10 +6,11 @@ import SignUp from './pages/SignUp'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CityContent from './components/CityContent'
+import CityTinerary from './components/CityTinerary'
 import {BrowserRouter , Route, Switch, Redirect} from 'react-router-dom'
 import '../src/styles.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 function App() {
   return (
     <>

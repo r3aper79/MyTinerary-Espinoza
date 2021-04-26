@@ -1,8 +1,32 @@
-const CityTinerary =({titulo})=>{
+import React,{useEffect} from 'react'
+import itinerariesAction from '../redux/actions/itinerariesAction'
+import ItineraryCard from '../components/ItineraryCard'
+import {connect} from 'react-redux'
+
+const CityTinerary =(props)=>{
+   
+    useEffect(()=>{
+        props.LoadItineraries()
+        window.scrollTo(0,0)
+    },[])
+    let arrayFromItineraries = []
+    props.allItineraries.map((itinerario)=>{
+        if(itinerario.IdCity === props.IdOfCity){
+            arrayFromItineraries.push(itinerario)
+        }
+    })
     return(
-        <h1 style={{color: 'red', backgroundColor:'white',
-        textAlign: 'center'
-    }}>Itinerary for {titulo} is under construction</h1>
-    )  
+        <>
+        <ItineraryCard items={arrayFromItineraries}/>
+        </>
+    )
 }
-export default CityTinerary
+const mapStateToProps = state =>{
+    return{
+        allItineraries: state.ItinerariesRedux.itineraries
+    }
+}
+const mapDispatchToProps = {
+    LoadItineraries: itinerariesAction.loadItineraries
+}
+export default connect(mapStateToProps,mapDispatchToProps)(CityTinerary)

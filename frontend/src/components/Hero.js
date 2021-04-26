@@ -19,11 +19,11 @@ const Hero = ()=>{
              <Col xs={10} md={10} style={{margin:'1vh 0'}}>
             <p id={"Find"}>Find your perfect trip, designed by insiders who know and love their cities</p>
             </Col>
-            <Col className="hero-hover" xs={10} sm={10} style={{margin:'0.6vh 0' , border:'double 5px lightblue', borderRadius:'70px'}}>
+            <Col className="hero-hover" xs={10} sm={10}>
             <h1 id="heroTitle">It's time to explore the World!!!</h1>
-                     <Button variant="warning" className="my-btn">
-              <NavLink  className="NavLink" to="/cities">Click Here!!</NavLink>
-              </Button>
+                    <Button variant="warning" className="my-btn">
+                        <NavLink  className="NavLink" to="/cities">Click Here!!</NavLink>
+                    </Button>
             </Col>
 
         </Row>

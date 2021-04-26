@@ -1,4 +1,4 @@
-import bgPhoto from '../img/oops.jpg'
+
 const Ooops = ()=>{
     return(
         <>
