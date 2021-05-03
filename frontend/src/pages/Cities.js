@@ -11,6 +11,7 @@ const Cities = (props)=>{
         props.LoadCities()
         window.scrollTo(0,0)
     },[props.LoadCities])
+    
     const movePointer = ()=>{
         window.scrollTo(0,0)
     }

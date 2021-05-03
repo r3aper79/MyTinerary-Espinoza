@@ -1,8 +1,10 @@
 require('dotenv').config()
 
 const express = require('express')
+const passport = require('passport')
 const cors = require ('cors')
 const router = require ('./routes/index')
+require('./config/passport')
 require('./config/database')
 
 //middleWare

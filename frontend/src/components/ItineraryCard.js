@@ -1,13 +1,11 @@
-import {Button,Card,CustomToggle,Accordion} from 'react-bootstrap'
+import {Button,Card,Accordion} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
-import {useState} from 'react'
-import Loader from "react-loader-spinner"
+
+import ItineraryIndividual from '../components/ItineraryIndividual'
+
 
 const ItineraryCard = ({items})=>{
-    let [visible,setVisible] = useState(false) 
-    const handleVisible = () => {
-        setVisible(!visible)
-    }
+   
     const movePointer =()=>{
         window.scrollTo(0,0)
     }
@@ -17,20 +15,7 @@ const ItineraryCard = ({items})=>{
         {items.map(item => {
             const profilePhoto = require(`../img/${item.fotoUser}`)
             return(
-                <div className="itineraryCard">
-                    <div className="tituloItinerario">{item.titulo}</div>
-                    <div className="profilePhoto" style={{backgroundImage: `url(${profilePhoto.default})`}}></div>
-                    <h1 style={{color: 'white'}}>{item.nombreUser}</h1>
-                    <div className="objetos">
-                        <h4>Price: {new Array(item.precio).fill(0).map(elemento=><i class="far fa-money-bill-alt"></i>)}</h4>
-                        <h4>Duration: {new Array(item.duracion).fill(0).map(elemento=><i class="fas fa-stopwatch"> </i>)}</h4>
-                        <h4><i class="far fa-heart">{item.likes}</i></h4>
-                    </div>
-                    <div className="hashtag">
-                        {item.hashtag.map(i=>{return(<h2>{i}</h2>)})}
-                    </div>
-                    <Button onClick={handleVisible} variant="warning">{visible ? "View More" : "View Less"}</Button>
-                </div>
+                <ItineraryIndividual item={item} bgrImg={profilePhoto} />
             )
         })}
             <div className="botonesNavegador">
