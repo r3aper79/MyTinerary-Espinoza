@@ -8,6 +8,21 @@ const itinerariesAction = {
                 .then(data => dispatch({type: "LOAD_ITINERARIES" , payload: data.data.response}))
             }catch(error){console.log(error)}
         }
+    },
+    enviarComentario: ()=>{
+
+    },
+    borrarComentario: ()=>{
+
+    },
+    modificarComentario: ()=>{
+
+    },
+    likeItinerario: ()=>{
+
+    },
+    dislikeItinerario: ()=>{
+        
     }
 }
 export default itinerariesAction

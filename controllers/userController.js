@@ -58,6 +58,8 @@ const userControler = {
       console.log(error);
     }
   },
+  //req.user me llegan todos los datos del modelo user que pasaron por el passport
+  //response va al userActions 
   loginFromLocalStorage: async (req, res) => {
     res.json({
       success: true,

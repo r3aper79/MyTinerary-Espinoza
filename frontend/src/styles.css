@@ -467,6 +467,10 @@ footer{
 .hovermouse:hover{
     cursor: pointer;
 }
+.billetitos{
+    color: greenyellow;
+    margin-left: 3px;
+}
 .password-container{
     margin: 0;
     padding: 0;

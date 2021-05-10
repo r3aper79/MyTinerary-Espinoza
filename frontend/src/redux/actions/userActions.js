@@ -51,13 +51,15 @@ const userActions = {
           }
       })
       console.log("usuarioLS",respuesta)
+      //.data.response es lo que me mando el controller al yo haberle hecho un pedido de tipo GET
         dispatch({type: 'USER_LOG', payload: {
             ...respuesta.data.response,
             token: usuarioLS
         }})
       }catch(err) {
         if(err.response.status === 401){
-          alert("Algo pasa con el token")
+          alert("No toques el token")
+          localStorage.clear()
         }
       }    
   }
