@@ -1,6 +1,8 @@
 import CityTinerary from './CityTinerary'
 import { useEffect, useState } from "react"
+import { connect } from 'react-redux'
 import axios from 'axios'
+import citiesAction from '../redux/actions/citiesAction'
 
 //los componentes reciben props de ruteo aunque no esten implicitos
 //history
@@ -8,15 +10,12 @@ import axios from 'axios'
 //match.params tiene el parametro que se manda de la url osea de route /:nombreQueSea
 
 const CityContent = (props) =>{
-    const myID = props.match.params.id
-    let [myCity,setmyCity] = useState([])
 
-    useEffect(()=>{
-        axios.get(`http://localhost:3080/api/city/${myID}`)
-        .then(response => setmyCity(response.data.response))
-        .catch(error => console.log(error))
+    useEffect( ()=>{
+        props.getOneCity(props.match.params.id)
     },[])
     
+    let myCity = props.city
     return(
         <>
             <div className="cityContent">
@@ -24,14 +23,20 @@ const CityContent = (props) =>{
                     backgroundImage: `url(/img/${myCity.src})`,
                     backgroundSize: 'cover'
                 }}>
-                    <h1 id="titulo-cityContent">Welcome to {myCity.titulo}</h1>   
+                    <h1 id="titulo-cityContent">Welcome to {myCity.titulo}</h1>
                 </div>
-            </div>
-            <div>
-                <CityTinerary IdOfCity={myID}/>
+                <CityTinerary IdOfCity={props.match.params.id}/>
             </div>
         </>
     )
 }
+const mapStateToProps = state => {
+    return{
+        city: state.CitiesRedux.city
+    }
+}
+const mapDispatchToProps = {
+    getOneCity: citiesAction.getOneCity
+}
 
-export default CityContent
+export default connect(mapStateToProps , mapDispatchToProps)(CityContent)

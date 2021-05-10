@@ -1,9 +1,20 @@
 import {Button,Card,Accordion} from 'react-bootstrap'
 import {useState} from 'react'
+
 const ItineraryIndividual = ({item,bgrImg})=>{
-    let [visible,setVisible] = useState(false) 
+    let [visible,setVisible] = useState(false)
+    let color = false 
     const handleVisible = () => {
         setVisible(!visible)
+    }
+    const cambiarColor = (e)=>{
+        if(!color){
+            document.getElementById("like").style.color = "red"
+            color = true
+        }else{
+            document.getElementById("like").style.color = "black"
+            color = false
+        }
     }
     return(
         <div className="itineraryCard">
@@ -13,7 +24,7 @@ const ItineraryIndividual = ({item,bgrImg})=>{
             <div className="objetos">
                 <h4>Price: {new Array(item.precio).fill(<i className="far fa-money-bill-alt"> </i>)}</h4>
                 <h4>Duration: {new Array(item.duracion).fill(<i className="fas fa-stopwatch"> </i>)}</h4>
-                <h4><i class="far fa-heart">{item.likes}</i></h4>
+                <h4><i class="fas fa-heart hovermouse" onClick={cambiarColor} id="like">{item.likes}</i></h4>
             </div>
             <div className="hashtag">
                 {item.hashtag.map(i=>{return(<h2>{i}</h2>)})}

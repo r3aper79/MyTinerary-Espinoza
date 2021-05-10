@@ -8,14 +8,16 @@ const ItinerariesSchema = new mongoose.Schema({
     fotoUser:{type: String , required: true},
     precio:{type: Number, required: true},
     duracion:{type: Number , required: true},
-    likes:{type: Number , default: 0},
+    likes: {type: Array, required: true, default:[]},
     hashtag: [String],
-    comentarios: [String],
-    actividades: {type: [{fotoActividad: String , tituloActividad: String}] , required: false},
-    IdCity: {type: mongoose.Types.ObjectId, ref: "cities"}
+    comentarios: {type:[{nombreUser: String, fotoUser: String , comment: String}] , required: false , default: []},
+    IdCity: {type: mongoose.Types.ObjectId, ref: "city"}
 })
 
 //creando el modelo...
 const Itinerary = mongoose.model('itinerary',ItinerariesSchema)
 //exportando el modelo...
 module.exports = Itinerary
+
+
+//actividades: {type: [{fotoActividad: String , tituloActividad: String}] , required: false}, modelo aparte

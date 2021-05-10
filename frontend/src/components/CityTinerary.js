@@ -4,20 +4,17 @@ import ItineraryCard from '../components/ItineraryCard'
 import {connect} from 'react-redux'
 
 const CityTinerary =(props)=>{
-   
+    console.log("city tinerario" , props)
+
     useEffect(()=>{
-        props.LoadItineraries()
+        props.LoadItineraries(props.IdOfCity)
         window.scrollTo(0,0)
     },[])
-    let arrayFromItineraries = []
-    props.allItineraries.map((itinerario)=>{
-        if(itinerario.IdCity === props.IdOfCity){
-            arrayFromItineraries.push(itinerario)
-        }
-    })
+    //cambiar esto llamar itinerarios individuales
+    let arrayFromItineraries = props.allItineraries
     return(
         <>
-        <ItineraryCard items={arrayFromItineraries}/>
+            <ItineraryCard items={arrayFromItineraries}/>
         </>
     )
 }

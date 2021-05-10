@@ -1,6 +1,6 @@
 const Itinerary = require("../models/Itineraries")
 
-//importa el modelo
+//importar el modelo
 const itinerariesController = {
     addItinerary: async (req, res) =>{
         try{
@@ -19,17 +19,10 @@ const itinerariesController = {
             res.json({success: false , response: error})
         }
     },
-    getItineraryByCityId: async(req , res) =>{
-        try{
-            const itineraryByCityID = await Itinerary.find({IdCity: req.params.id })
-            res.json({success: true , itineraryByCityID})
-        } catch(error){
-            res.json({success: false , response: error})
-        }
-    },
     getItineraryById: async (req , res) =>{
         try{
-            const itinerary = await Itinerary.findOne({_id: req.params.id})
+            //primero busco el itinerario que dentro tenga IdCity que es mi parametro
+            const itinerary = await Itinerary.find({IdCity: req.params.id})
             res.json({success: true , response: itinerary})
         } catch(error){
             res.json({success: false , response: error})

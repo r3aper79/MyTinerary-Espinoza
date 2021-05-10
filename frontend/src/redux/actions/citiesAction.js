@@ -1,3 +1,4 @@
+import axios from 'axios'
 
 const citiesAction = {
     loadCities: () => {
@@ -13,6 +14,16 @@ const citiesAction = {
                 type: 'GET_INPUT_VALUE',
                 payload: input
             })
+        }
+    },
+    getOneCity : (Id) => {
+        return (dispatch , getState) => {
+            axios.get(`http://localhost:3080/api/city/` + Id)
+            .then(response => dispatch({
+                type: 'GET_CITY',
+                payload: response.data.response
+            }))
+            .catch(error => console.log(error))
         }
     }
 }
